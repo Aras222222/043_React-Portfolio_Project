@@ -10,9 +10,7 @@ dotenv.config();
 
 const port = process.env.PORT || 4000;
 
-// Make sure the proper origin is given for CORS so it works
-// both in production and development environment.
-let allowedFrontEndOrigin = process.env.PORT ? process.env.PORTFOLIO_WEBSITE : "*";
+let allowedFrontEndOrigin = process.env.IS_IN_PRODUCTION ? process.env.PORTFOLIO_WEBSITE : "*";
 
 // This section enables cors
 app.use((req, res, next) => {
